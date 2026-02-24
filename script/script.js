@@ -169,5 +169,17 @@ function updateCounts() {
     (j) => j.status === "rejected",
   ).length;
 }
-
+// even handler section part
+document.querySelectorAll(".tab-btn").forEach((btn) => {
+  btn.addEventListener("click", function () {
+    //
+    document
+      .querySelectorAll(".tab-btn")
+      .forEach((b) => b.classList.remove("btn-primary"));
+    //
+    this.classList.add("btn-primary");
+    //
+    JobsHandler(this.id);
+  });
+});
 JobsHandler();
